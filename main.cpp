@@ -6,10 +6,10 @@
 
 using namespace std;
 
-//int sort(const void* a, const void* b)//алгоритм сортировки
-//{
-//	return (*(int*)a - *(int*)b);
-//}
+int sort(const void* a, const void* b)//алгоритм сортировки
+{
+	return (*(int*)a - *(int*)b);
+}
 
 // Лаб. 5 Задание 4
 /*----------------------------------------------------------------------------------------------------------------*/
@@ -195,26 +195,48 @@ using namespace std;
 /*----------------------------------------------------------------------------------------------------------------*/
 //int main()
 //{
-//    int arr[15] = {};//массив
-//    cout << "Print your array: ";
-//    for (int i = 0; i < 15; i++)
+//    int arr[100] = {}, size, k;//массив
+//
+//    cout << "Enter the size of the array: ";
+//    cin >> size;
+//
+//    cout << "Enter 1 if you want to enter the value yourself and 0 if automatically: ";
+//    cin >> k;
+//
+//    if (k == 1)
 //    {
-//        cin >> arr[i];//вводим массив
-//        if (arr[i] < -10 || arr[i] > 10)//проверяем на условие
+//        for (int i = 0; i < size; i++)
 //        {
-//            cout << "\nError! Try again!\n";
-//            i--;
+//            cin >> arr[i];//вводим массив
+//            if (arr[i] < -10 || arr[i] > 10)//проверяем на условие
+//            {
+//                cout << "\nError! Try again!\n";
+//                i--;
+//            }
 //        }
 //    }
+//    else if (k == 0)
+//    {
+//        for (int i = 0; i < size; i++)
+//        {
+//            arr[i] = rand() % 21;
+//            if (arr[i] < -10 || arr[i] > 10)//проверяем на условие
+//            {
+//                cout << "\nError! Try again!\n";
+//                i--;
+//            }
+//        }
+//    }
+//    
 //    cout << "Before sort:";
-//    for (int i = 0; i < 15; i++)//выводим массив
+//    for (int i = 0; i < size; i++)//выводим массив
 //    {
 //        cout << " ";
 //        cout << arr[i];
 //    }
-//    qsort(arr, 15, sizeof(int), sort);//вызываем сортировку
+//    qsort(arr, size, sizeof(int), sort);//вызываем сортировку
 //    cout << "\nAfter sort:";
-//    for (int i = 0; i < 15; i++)//выводим отсортированный массив
+//    for (int i = 0; i < size; i++)//выводим отсортированный массив
 //    {
 //        cout << " ";
 //        cout << arr[i];
@@ -230,10 +252,31 @@ using namespace std;
 //{
 //	setlocale(LC_ALL, "Russian");
 //
-//	const int n = 5;
-//	int arr1[n] = { 1, 2, 3, 4, 5 }, arr2[n] = { 0, 0, 0, 0, 0 };
+//	int arr1[100] = {}, arr2[100] = { 0 }, size, k;
 //
-//	for (int i = 0; i < n; i++)
+//    cout << "Введите размер массива: ";
+//    cin >> size;
+//
+//    cout << "Введите 1 если хотите ввести сами значение и 0 если автоматически: ";
+//    cin >> k;
+//
+//    if (k == 1)
+//    {
+//        for (int i = 0; i < size; i++)
+//        {
+//            cout << "Введите элемент массива [" << i + 1 << "]: ";
+//            cin >> arr1[i];
+//        }
+//    }
+//    else if (k == 0)
+//    {
+//        for (int i = 0; i < size; i++)
+//        {
+//            arr1[i] = rand() % 21;
+//        }
+//    }
+//
+//	for (int i = 0; i < size; i++)
 //	{
 //		if (abs(arr1[i]) > 1)
 //		{
@@ -242,7 +285,7 @@ using namespace std;
 //	}
 //
 //	cout << "Преобразованный массив: ";
-//	for (int i = 0; i < n; i++)
+//	for (int i = 0; i < size; i++)
 //	{
 //		cout << arr2[i] << " ";
 //	}
@@ -257,17 +300,32 @@ using namespace std;
 //{
 //	setlocale(LC_ALL, "Russian");
 //
-//	const int sise = 10;
-//	int ibeg = 0, iend = 0;
-//	float arr[sise] = {}, summ = 0, sumIbegIend = 0;
+//	int ibeg = 0, iend = 0, size, k;
+//	float arr[100] = {}, summ = 0, sumIbegIend = 0;
 //
-//	for (int i = 0; i < sise; i++)
+//	cout << "Введите размер массива: ";
+//	cin >> size;
+//
+//	cout << "Введите 1 если хотите ввести сами значение и 0 если автоматически: ";
+//	cin >> k;
+//
+//	if (k == 1)
 //	{
-//		cout << "Введите элемент массива [" << i + 1 << "]: ";
-//		cin >> arr[i];
+//		for (int i = 0; i < size; i++)
+//		{
+//			cout << "Введите элемент массива [" << i + 1 << "]: ";
+//			cin >> arr[i];
+//		}
+//	}
+//	else if (k == 0)
+//	{
+//		for (int i = 0; i < size; i++)
+//		{
+//			arr[i] = rand() % 21;
+//		}
 //	}
 //
-//	for (int i = 0; i < sise; i++)
+//	for (int i = 0; i < size; i++)
 //	{
 //		if (i % 2 != 0)
 //		{
@@ -277,7 +335,7 @@ using namespace std;
 //	
 //	cout << "Сумма элементов массива с нечетными номерами равна: " << summ << endl;
 //
-//	for (int i = 0; i < sise; i++)
+//	for (int i = 0; i < size; i++)
 //	{
 //		if (arr[i] < 0)
 //		{
@@ -286,7 +344,7 @@ using namespace std;
 //		}
 //	}
 //
-//	for (int i = ibeg+1; i < sise; i++)
+//	for (int i = ibeg+1; i < size; i++)
 //	{
 //		if (arr[i] < 0)
 //		{
@@ -312,12 +370,28 @@ using namespace std;
 //{
 //    setlocale(LC_ALL, "Russian");
 //
-//    int arr[10] = {}, size = 10;
+//    int size, k, arr[100] = {};
 //
-//    for (int i = 0; i < size; i++)
+//    cout << "Введите размер массива: ";
+//    cin >> size;
+//
+//    cout << "Введите 1 если хотите ввести сами значение и 0 если автоматически: ";
+//    cin >> k;
+//
+//    if (k == 1)
 //    {
-//        cout << "Введите элемент массива [" << i + 1 << "]: ";
-//        cin >> arr[i];
+//        for (int i = 0; i < size; i++)
+//        {
+//            cout << "Введите элемент массива [" << i + 1 << "]: ";
+//            cin >> arr[i];
+//        }
+//    }
+//    else if (k == 0)
+//    {
+//        for (int i = 0; i < size; i++)
+//        {
+//            arr[i] = rand() % 21;
+//        }
 //    }
 //
 //    for (int i = 0; i < size - 1; i++)
